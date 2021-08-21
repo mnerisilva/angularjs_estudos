@@ -13,4 +13,10 @@ app.controller('primeiroController', ['$scope', function($scope) {
         $scope.contador++;
     }
 
+    
+
+    $scope.subtrai = function(){
+        $scope.contador--;
+    }
+
 }]);
