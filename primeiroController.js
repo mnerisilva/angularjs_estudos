@@ -1,27 +1,25 @@
-var app = angular.module('loja', []);
+var app = angular.module('app', []);
 
 
 app.controller('primeiroController', ['$scope', function($scope) {
 
     $scope.bt_subtrai = document.querySelector('.bt-subtrai');
-    console.log($scope.bt_subtrai);
+    //console.log($scope.bt_subtrai);
 
-    $scope.user = [
-                    { id : 1, meuNome : 'Marcelo Neri da Silva'},
-                    { id : 2, meuNome : 'Heliane Medeiros da Silveira e Silva'}
-                ];
+    $scope.user = [];
 
     $scope.obj = {};
-    $scope.contador = 2;
+    $scope.contador = 1;
 
-    $scope.soma = function(){
+    $scope.add = function(){
         $scope.obj.id = $scope.contador;
-        $scope.obj.meuNome = "Helena Medeiros da Silveira";
+        $scope.obj.nome = $scope.nome;
         $scope.user.push($scope.obj);
         console.log('Objeto temporário: '+$scope.obj);
         $scope.obj = {};
+        $scope.nome = '';
         if($scope.contador > -1){
-            $scope.bt_subtrai.removeAttribute('disabled');
+            //$scope.bt_subtrai.removeAttribute('disabled');
         }        
         $scope.contador++;
     }
